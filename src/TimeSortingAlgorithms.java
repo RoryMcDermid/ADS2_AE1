@@ -14,7 +14,7 @@ public class TimeSortingAlgorithms {
         int[] InsertionArray = Test.ReadFile(FileName);
 
         //Used to test A and D with duplicates, initialising A_Array (line 40) and D_Array (line 70) further down must be removed if these lines are activated
-        //*
+        /*
         int[] A_Array = new int[1000];
         int[] D_Array = new int[1000];
 
@@ -37,7 +37,7 @@ public class TimeSortingAlgorithms {
 
 
 
-        //int[] A_Array = Test.ReadFile(FileName);
+        int[] A_Array = Test.ReadFile(FileName);
 
         //This line has to be here as otherwise Sort1 goes from EXE time of 6000~ to 350000
         QuickSorts.ArrayPrint(A_Array);
@@ -52,7 +52,7 @@ public class TimeSortingAlgorithms {
         int[] B_Array = Test.ReadFile(FileName);
 
         long Sort2_startTime = System.nanoTime();
-        //QuickSorts.Sort2(B_Array, 0, B_Array.length-1, 5000);
+        QuickSorts.Sort2(B_Array, 0, B_Array.length-1, 5000);
         long Sort2_endTime   = System.nanoTime();
         long Sort2_totalTime = Sort2_endTime - Sort2_startTime;
         System.out.println("Execution time for Sort 1B is : " + Sort2_totalTime + " nanoseconds");
@@ -61,13 +61,13 @@ public class TimeSortingAlgorithms {
         int[] C_Array = Test.ReadFile(FileName);
 
         long Sort3_startTime = System.nanoTime();
-        //QuickSorts.Sort3(C_Array, 0, C_Array.length-1);
+        QuickSorts.Sort3(C_Array, 0, C_Array.length-1);
         long Sort3_endTime   = System.nanoTime();
         long Sort3_totalTime = Sort3_endTime - Sort3_startTime;
         System.out.println("Execution time for Sort 1C is : " + Sort3_totalTime + " nanoseconds");
 
 
-        //int[] D_Array = Test.ReadFile(FileName);
+        int[] D_Array = Test.ReadFile(FileName);
 
         long Sort4_startTime = System.nanoTime();
         QuickSorts.Sort4(D_Array, 0, D_Array.length-1);
