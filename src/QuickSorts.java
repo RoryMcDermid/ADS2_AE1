@@ -1,9 +1,8 @@
-import java.util.Arrays;
 
 public class QuickSorts {
 
 
-    public int Partition(int Arr[], int p, int r){
+    public static int Partition(int Arr[], int p, int r){
 
         int pivot = Arr[r];
         int i = 0;
@@ -29,7 +28,7 @@ public class QuickSorts {
 
     }
 
-    public void Insertion(int Arr[]){
+    public static void Insertion(int Arr[]){
 
         for(int i = 0; i < Arr.length; i++){
             int x = Arr[i];
@@ -43,7 +42,7 @@ public class QuickSorts {
 
     }
 
-    public int Median(int Arr[], int p, int r){
+    public static int Median(int Arr[], int p, int r){
 
         int s = (p + r) / 2;
 
@@ -75,7 +74,7 @@ public class QuickSorts {
 
     }
 
-    public int Partition_Med(int Arr[], int p, int r, int median){
+    public static int Partition_Med(int Arr[], int p, int r, int median){
 
         int i = 0;
         i = p - 1;
@@ -97,7 +96,7 @@ public class QuickSorts {
 
     }
 
-    public int[] Partition_3_Way(int Arr[], int p, int r){
+    public static int[] Partition_3_Way(int Arr[], int p, int r){
 
         int pivot = Arr[r];
         int i = 0;
@@ -140,8 +139,8 @@ public class QuickSorts {
 
     }
 
-
-    public void Sort1(int Arr[], int p, int r){
+    //Question 1a
+    public static void Sort1(int Arr[], int p, int r){
         if (p < r) {
             int q = Partition(Arr, p, r);
             Sort1(Arr, p, q - 1);
@@ -149,7 +148,8 @@ public class QuickSorts {
         }
     }
 
-    public void Sort2(int Arr[], int p, int r, int k){
+    //Question 1b
+    public static void Sort2(int Arr[], int p, int r, int k){
 
         if(r - p + 1 < k){
             Insertion(Arr);
@@ -165,7 +165,8 @@ public class QuickSorts {
 
     }
 
-    public void Sort3(int Arr[], int p, int r){
+    //Question 1c
+    public static void Sort3(int Arr[], int p, int r){
 
         if ((r - p + 1) <= 3) {
             Sort1(Arr, p, r);
@@ -183,7 +184,8 @@ public class QuickSorts {
 
     }
 
-    public void Sort4(int Arr[], int p, int r){
+    //Question 1d
+    public static void Sort4(int Arr[], int p, int r){
         if (p < r) {
             int[] q = Partition_3_Way(Arr, p, r);
             Sort4(Arr, p, q[0] - 1);
@@ -207,7 +209,7 @@ public class QuickSorts {
 
 
     //Print array for testing purposes
-    static void ArrayPrint(int Arr[]) {
+    public static void ArrayPrint(int Arr[]) {
 
         for (int i = 0; i < Arr.length; i++) {
 
@@ -223,9 +225,12 @@ public class QuickSorts {
 
     public static void main(String[ ] args) {
         QuickSorts QS = new QuickSorts();
-        int[] A = {6,5,0,4,1,8,3,3,4,5,0,5,6};
-        QS.Sort4(A,0,A.length-1);
-        ArrayPrint(A);
+        int[] A = {12,93,76,25,67,39,31,2,18,52};
+        QS.Sort1(A,0,A.length-1);
+
+        ArrayPrint(Test.Insertion(A));
+
+        System.out.println(Test.Sorted(A));
 
     }
 }
